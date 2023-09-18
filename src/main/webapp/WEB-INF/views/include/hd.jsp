@@ -57,7 +57,7 @@
                                     <a class="navbar-item" href="${path1}/board/list.do">교육매거진</a>
                                     <a class="navbar-item" href="${path1}/board/list.do">커뮤니티</a>
                                     <a class="navbar-item" href="${path1}/board/list.do">이벤트</a>
-                                    <a class="navbar-item" href="${path1}/board/list.do">고객센터</a>
+                                    <a class="navbar-item" href="${path1}/notice/list.do">고객센터</a>
                                 </div>
                             </div>
                         </div>
