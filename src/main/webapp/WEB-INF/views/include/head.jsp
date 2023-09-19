@@ -18,5 +18,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
 <link rel="stylesheet" href="${path0}/resources/css/styles.css" />
 <link rel="stylesheet" href="${path0}/resources/css/style_test.css" />
+<link rel="stylesheet" href="${path0}/resources/css/forum.css" />
+<link rel="stylesheet" href="${path0}/resources/css/blog.css" />
+
 <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
 <script defer src="${path0}/resources/js/scripts.js"></script>

@@ -19,38 +19,51 @@
 		<!-- 헤더 부분 인클루드 -->
 	 	<jsp:include page="../include/hd.jsp"></jsp:include>
     </header>
-	
-	<div class="content" id="contents">
-	    <div class="row column text-center">
-	      <h2 class="h1">공지사항 글 작성</h2>
-	      <hr>
-	      <div class="container">
-	      	<form action="${path1 }/notice/insert.do" method="post">
-			      <table id="table1">
-			      	<tbody>
-			      		<tr>
-			      			<th style="background-color:#dcdcdc">글 제목</th>
-			      			<td>
-			      				<input type="text" name="title" id="title" placeholder="제목 입력" maxlength="98" required>
-			      			</td>
-			      		</tr>
-			      		<tr>
-			      			<th style="background-color:#dcdcdc">글 내용</th>
-			      			<td>
-			      				<textarea name="content" id="content" placeholder="내용 입력" rows="8" cols="100" maxlength="800" required></textarea>
-			      			</td>
-			      		</tr>
-			      		<tr>
-			      			<td colspan="2">
-			      				<input type="submit" class="submit success button" value="글 등록" >
-			      				<a class="button" href="${path1 }/notice/list.do">글 목록</a>
-			      			</td>
-			      		</tr>
-			      	</tbody>
-			      </table>
-			   </form>   
-	      </div>
-	    </div>
+	<div class="container is-fullhd">
+		<!-- 헤더 부분 인클루드 -->
+		<div class="columns">
+			<div class="column is-2">
+				<aside class="menu">
+				<span class="box has-text-white has-text-weight-semibold has-text-centered is-size-5">
+					고객센터
+				</span>
+					<ul class="menu-list">
+						<li>
+							<a href="${path1 }/notice/list.do">공지사항</a>
+						</li>
+						<li>
+							<a href="${path1 }/qna/list.do">묻고 답하기</a>
+						</li>
+						<li>
+							<a href="${path1 }/faq/list.do">자주 묻는 질문</a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<div class="column is-10">
+				<div class="conwrap">
+					<div class="box">
+						<span class="title">공지사항</span>
+					</div>
+				</div>
+
+				<div class="formwrap">
+					<form action="${path1 }/notice/insert.do" method="post">
+						<div class="field">
+							<label class="label" for="title">공지사항 제목</label>
+							<div class="control">
+								<input type="text" name="title" id="title" placeholder="공지사항 제목" class="input" maxlength="98" required>
+							</div>
+						</div>
+						<div class="field">
+							<label class="label" for="content">내용</label>
+							<textarea name="content" id="content" placeholder="공지사항 내용" class="textarea" rows="8" cols="100" maxlength="1400" required></textarea>
+						</div>
+						<button type="submit" class="button post-btn">글 등록</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
     <footer id="footer" class="footer-nav row expanded collapse">
     	<!-- 푸터 부분 인클루드 -->

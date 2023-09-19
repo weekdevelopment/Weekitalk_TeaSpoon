@@ -19,62 +19,98 @@
 		<!-- 헤더 부분 인클루드 -->
 	 	<jsp:include page="../include/hd.jsp"></jsp:include>
     </header>
-	
-	<div class="content" id="content">
-	    <div class="row column text-center">
-			<c:if test='${dto.lev == 0}'>
-			<h2 class="h1">질문 상세</h2>
-			</c:if>
-			<c:if test='${dto.lev == 1}'>
-				<h2 class="h1">답변 상세</h2>
-			</c:if>
-	      <hr>
-	      <div class="container">
-		      <table id="table1">
-		      	<tbody>
-		
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 번호</th>
-		      			<td>${dto.qno }</td>
-		      		</tr>	
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 제목</th>
-		      			<td>${dto.title }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 내용</th>
-		      			<td><p>${dto.content }</p></td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성일시</th>
-		      			<td>${dto.resdate }</td>
-		      		</tr>
-					<tr>
-						<th style="background-color:#dcdcdc">작성자</th>
-						<td>${dto.name }</td>
-					</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">읽은 횟수</th>
-		      			<td>${dto.visit }</td>
-		      		</tr>
-		      	</tbody>
-		      </table>
-			  <div class="button-group">
-				  <a class="button" href="${path1 }/qna/list.do">글 목록</a>
-			  </div>
-			  <%-- <c:if test='${sid eq "admin"}' >  --%>
-			  <div class="button-group">
-				  <a class="button" href="${path1 }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
-				  <a class="button" href="${path1 }/qna/edit.do?qno=${dto.qno}&lev=${dto.lev}">글 수정</a>
-			  </div>
-			  <%-- </c:if> --%>
-			  <%-- <c:if test='${!empty sid && lev == 0}'>  --%>
-			  <div class="button-group">
-				  <a class="button" href="${path1 }/qna/insert.do?lev=1&par=${dto.qno}">답변</a>
-			  </dic
-			  <%-- </c:if> --%>
-		  </div>
-	    </div>
+	<div class="container is-fullhd">
+		<div class="columns">
+			<div class="column is-2">
+				<aside class="menu">
+				<span class="box has-text-white has-text-weight-semibold has-text-centered is-size-5">
+					고객센터
+				</span>
+					<ul class="menu-list">
+						<li>
+							<a href="${path1 }/notice/list.do">공지사항</a>
+						</li>
+						<li>
+							<a href="${path1 }/qna/list.do">묻고 답하기</a>
+						</li>
+						<li>
+							<a href="${path1 }/faq/list.do">자주 묻는 질문</a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<div class="column is-10">
+				<div class="conwrap">
+					<div class="box">
+						<%--<h6>자유게시판</h6>--%>
+						<span class="title">묻고 답하기</span>
+					</div>
+				</div>
+
+				<div class="card article">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content has-text-centered">
+								<h1 class="title article-title">${dto.title }</h1>
+								<h6 class="subtitle is-6 article-subtitle">
+									${dto.name } | ${dto.resdate } | 조회수:${dto.visit }
+								</h6>
+							</div>
+						</div>
+						<hr>
+
+						<div class="content article-body">
+							<p style="padding: 20px 100px; min-height: 100px; font-size: 18px;">
+								${dto.content }
+							</p>
+						</div>
+					</div>
+
+					<%--					<div class="columns">--%>
+					<%--						<div class="column is-5"></div>--%>
+					<%--						<div class="column is-2">--%>
+					<%--							<a class="button is-fullwidth post-btn" href="${path1 }/notice/edit.do?nno=${dto.nno}">추천</a>--%>
+					<%--						</div>--%>
+					<%--						<div class="column is-5"></div>--%>
+					<%--					</div>--%>
+
+					<div class="columns">
+						<div class="column is-3"></div>
+						<div class="column is-2">
+							<a class="button is-fullwidth is-info" href="${path1 }/qna/list.do">글 목록</a>
+						</div>
+						<%-- <c:if test='${sid eq "admin"}'>  --%>
+						<div class="column is-2">
+							<a class="button is-fullwidth is-primary" href="${path1 }/qna/edit.do?qno=${dto.qno}">글 수정</a>
+						</div>
+						<div class="column is-2">
+							<a class="button is-fullwidth is-danger" href="${path1 }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
+						</div>
+						 <c:if test='${dto.lev == 0}'>
+						<div class="column is-2">
+							<a class="button is-fullwidth submission" href="${path1 }/qna/insert.do?lev=1&par=${dto.qno}">답변하기</a>
+						</div>
+						 </c:if>
+						<%-- </c:if> --%>
+						<div class="column is-3"></div>
+					</div>
+				</div>
+
+				<div class="cmtwrap">
+					<form action="/" method="post" class="columns mt-5">
+						<div class="column is-10">
+							<textarea class="textarea" name="content" id="content" placeholder="댓글을 입력해주세요." rows="2" cols="30" maxlength="800" required></textarea>
+						</div>
+						<div class="column is-2">
+							<button type="submit" class="button is-fullwidth submission">등록</button>
+						</div>
+					</form>
+				</div>
+
+
+
+			</div>
+		</div>
 	</div>
     <footer id="footer" class="footer-nav row expanded collapse">
     	<!-- 푸터 부분 인클루드 -->
