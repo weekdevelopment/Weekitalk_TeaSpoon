@@ -82,7 +82,7 @@ public class QnaController {
         dto.setQno(qno);
         dto.setTitle(request.getParameter("title"));
         dto.setContent(request.getParameter("content"));
-        dto.setAuthor("author");
+        dto.setAuthor(author);
         qnaService.qnaEdit(dto);
         return "redirect:list.do";
     }

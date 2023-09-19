@@ -214,3 +214,21 @@ CREATE VIEW qnalist2 AS (SELECT a.qno AS qno, a.title AS title, a.content AS con
 SELECT * FROM qnalist1;
 
 select qno from qnalist1 limit 1
+
+SELECT COUNT(*) FROM qna GROUP BY par DESC ;
+
+SELECT a. title , a.par, COUNT(*) as count
+FROM qna a 
+GROUP BY a.par
+ORDER BY count DESC;
+
+SELECT title, par, MAX(count) as count
+FROM (
+    SELECT a.title, a.par, COUNT(*) as count,
+           MAX(CASE WHEN a.lev = 0 THEN 1 ELSE 0 END) as has_lev_0
+    FROM qna a
+    GROUP BY a.par
+) subquery
+WHERE has_lev_0 = 1
+GROUP BY title, par
+ORDER BY count DESC LIMIT 5;

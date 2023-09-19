@@ -81,7 +81,7 @@
 						</div>
 						<%-- <c:if test='${sid eq "admin"}'>  --%>
 						<div class="column is-2">
-							<a class="button is-fullwidth is-primary" href="${path1 }/qna/edit.do?qno=${dto.qno}">글 수정</a>
+							<a class="button is-fullwidth is-primary" href="${path1 }/qna/edit.do?qno=${dto.qno}&lev=${dto.lev }">글 수정</a>
 						</div>
 						<div class="column is-2">
 							<a class="button is-fullwidth is-danger" href="${path1 }/qna/delete.do?qno=${dto.qno}">글 삭제</a>

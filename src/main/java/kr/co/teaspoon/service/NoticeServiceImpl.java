@@ -2,6 +2,7 @@ package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.NoticeDAO;
 import kr.co.teaspoon.dto.Notice;
+import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,8 @@ public class NoticeServiceImpl implements NoticeService{
     private NoticeDAO noticeDAO;
 
     @Override
-    public List<Notice> noticeList() throws Exception {
-        return noticeDAO.noticeList();
+    public List<Notice> noticeList(Page page) throws Exception {
+        return noticeDAO.noticeList(page);
     }
 
     @Override
@@ -35,5 +36,10 @@ public class NoticeServiceImpl implements NoticeService{
     @Override
     public void noticeEdit(Notice dto) throws Exception {
         noticeDAO.noticeEdit(dto);
+    }
+
+    @Override
+    public int totalCount(Page page) throws Exception {
+        return noticeDAO.totalCount(page);
     }
 }

@@ -173,7 +173,7 @@
 					<div class="column is-6">
 						<div class="card events-card">
 							<header class="card-header">
-								<p class="card-header-title">댓글 많은 글</p>
+								<p class="card-header-title">답변 많은 글</p>
 							</header>
 							<div class="card-table">
 								<div class="content">
@@ -208,7 +208,7 @@
 									 <h4 style="font-size: 1.19em;">${qna.title }</h4>
 								 </c:if>
 								 <c:if test='${qna.lev == 1 }'>
-									 <h4 style="font-size: 1.19em;"><img src="${path1 }/WEB-INF/views/qna/image/icon_reply.png" alt="[답변]">${qna.title }</h4>
+									 <h4 style="font-size: 1.19em;"><img src="${path1 }/resources/img/icon_reply.png" alt="[답변]"> ${qna.title }</h4>
 								 </c:if>
 								</a>
 								<div class="media">

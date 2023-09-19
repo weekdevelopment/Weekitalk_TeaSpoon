@@ -1,6 +1,7 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Notice;
+import kr.co.teaspoon.util.Page;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,8 +14,8 @@ public class NoticeDAOImpl implements NoticeDAO{
     private SqlSession sqlSession;
 
     @Override
-    public List<Notice> noticeList() throws Exception {
-        return sqlSession.selectList("notice.noticeList");
+    public List<Notice> noticeList(Page page) throws Exception {
+        return sqlSession.selectList("notice.noticeList",page);
     }
 
     @Override
@@ -36,5 +37,9 @@ public class NoticeDAOImpl implements NoticeDAO{
     @Override
     public void noticeEdit(Notice dto) throws Exception {
         sqlSession.update("notice.noticeEdit", dto);
+    }
+    @Override
+    public int totalCount(Page page) throws Exception {
+        return sqlSession.selectOne("notice.totalCount", page);
     }
 }
