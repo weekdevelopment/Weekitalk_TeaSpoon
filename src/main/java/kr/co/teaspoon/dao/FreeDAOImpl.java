@@ -40,4 +40,9 @@ public class FreeDAOImpl implements FreeDAO {
     public void freeEdit(Free dto) throws Exception {
         sqlSession.update("free.freeEdit", dto);
     }
+
+    @Override
+    public List<Free> freeRecList() throws Exception {
+        return sqlSession.selectList("free.freeRecList");
+    }
 }

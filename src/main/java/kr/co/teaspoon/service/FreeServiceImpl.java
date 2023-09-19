@@ -37,4 +37,9 @@ public class FreeServiceImpl implements FreeService {
     public void freeEdit(Free dto) throws Exception {
         freeDAO.freeEdit(dto);
     }
+
+    @Override
+    public List<Free> freeRecList() throws Exception {
+        return freeDAO.freeRecList();
+    }
 }

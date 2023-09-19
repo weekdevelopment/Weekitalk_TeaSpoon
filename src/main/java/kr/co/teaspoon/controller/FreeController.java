@@ -29,6 +29,8 @@ public class FreeController {
     public String getfreeList(Model model) throws Exception {
         List<Free> freeList = freeService.freeList();
         model.addAttribute("freeList", freeList);
+        List<Free> freeRecList = freeService.freeRecList();
+        model.addAttribute("freeRecList", freeRecList);
         return "/free/freeList";
     }
 

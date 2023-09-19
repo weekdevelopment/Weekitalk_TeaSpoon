@@ -21,6 +21,23 @@
 .formwrap {
     margin-top: 1rem;
 }
+.cmtwrap {
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+.cmtwrap textarea {
+    background-color: #f6f6f9;
+}
+.cmtwrap .submission {
+    font-size: 16px;
+    height: 72px;
+    background-color: #2B3A55;
+    color: #ffffff;
+    font-weight: 700;
+}
+.cmtwrap .submission:hover {
+    color: #a2aec7;
+}
 
 .navbar-menu .navbar-item {
     padding: 0 2rem;
@@ -44,7 +61,6 @@ aside.menu .menu-label {
     line-height: 2.8;
 }
 .post-btn:hover {
-    border-color: #b5b5b5;
     color: #a2aec7;
 }
 
@@ -87,7 +103,38 @@ article.post:last-child {
     background-color: #CE7777;
     margin-bottom: 0;
 }
+.tit {
+    margin-top: 1rem;
+}
+.tit p {
+    font-size: 30px;
+    line-height: 2.3;
+    font-weight: 700;
+    color: #777777;
+    text-align: center;
+}
 
+.card-header-title {
+    color: #CE7777;
+    font-weight: 600;
+    border-bottom: 1px solid #E6EAEE;
+}
+
+.card-table {
+    padding: 0.1rem 0.25rem;
+}
+
+.card-table a {
+    color: #2B3A55;
+}
+.card-table a:hover {
+    color: #CE7777;
+}
+
+.card-table td {
+    font-size: 13px;
+    color: #666666;
+}
 
 /*.menu-list li:first-child{
     border-top: none;

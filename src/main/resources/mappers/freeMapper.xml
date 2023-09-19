@@ -27,4 +27,8 @@
 	<update id="visitCount">
 		update free set visited=visited+1 where bno=#{bno}
 	</update>
+	<!-- 상위 글 5개 -->
+	<select id="freeRecList" resultType="kr.co.teaspoon.dto.Free">
+		select * from free order by rec desc limit 5
+	</select>
 </mapper>

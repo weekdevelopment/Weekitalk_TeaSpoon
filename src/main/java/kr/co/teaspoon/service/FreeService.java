@@ -14,4 +14,6 @@ public interface FreeService {
     public void freeDelete(int bno) throws Exception;
 
     public void freeEdit(Free dto) throws Exception;
+
+    public List<Free> freeRecList() throws Exception;
 }
