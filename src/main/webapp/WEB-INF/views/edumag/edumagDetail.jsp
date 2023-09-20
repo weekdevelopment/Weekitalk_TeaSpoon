@@ -115,7 +115,7 @@
                                 <input type="text" style="width: 1200px; height: 70px;" class="form-control" placeholder="댓글을 남겨주세요!" name="content">
                                     <input type="submit" class="button2" value="등록">
 
-                                    <%-- 댓글 --%>
+                                    <%--댓글--%>
 
                                     <c:forEach items="${edumagCommentList}" var="edumagComment" varStatus="status">
                                         <tr>
