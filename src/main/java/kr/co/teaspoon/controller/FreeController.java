@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +25,9 @@ public class FreeController {
 
     @Autowired
     private FreeService freeService;
+
+    @Autowired
+    HttpSession session;
 
     @GetMapping("list.do")        //free/list.do
     public String getfreeList(Model model) throws Exception {
@@ -52,6 +56,7 @@ public class FreeController {
         Free dto = new Free();
         dto.setTitle(request.getParameter("title"));
         dto.setContent(request.getParameter("content"));
+        dto.setId((String) session.getAttribute("sid"));
         freeService.freeInsert(dto);
         return "redirect:list.do";
     }

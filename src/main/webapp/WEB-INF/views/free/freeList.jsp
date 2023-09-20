@@ -125,13 +125,28 @@
 			</div>
 
 			<div class="button-group">
-				<%--<a class="button is-info is-normal" href="${path1 }/free/insert.do">글쓰기</a>--%>
-				<a class="button post-btn" href="${path1 }/free/insert.do">글쓰기</a>
+                <c:choose>
+                    <c:when test="${not empty sid }">
+                        <a class="button post-btn" href="${path1 }/free/insert.do">글쓰기</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="button post-btn" href="javascript:checkLogin()">글쓰기</a>
+                    </c:otherwise>
+                </c:choose>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- 푸터 부분 인클루드 -->
 <jsp:include page="../include/ft.jsp"></jsp:include>
+
+<script>
+    function checkLogin() {
+        var confirmLogin = confirm("글 작성은 로그인이 필요합니다. 로그인하시겠습니까?");
+        if (confirmLogin) {
+            location.href = '${path1 }/member/login.do';
+        }
+    }
+</script>
 </body>
 </html>

@@ -64,7 +64,9 @@
                 <div class="columns">
                     <div class="column is-5"></div>
                     <div class="column is-2">
-                        <a class="button is-fullwidth post-btn" href="${path1 }/free/edit.do?bno=${dto.bno}">추천</a>
+                        <a class="button is-fullwidth post-btn" href="${path1 }/free/edit.do?bno=${dto.bno}">
+                            추천<span style="margin-left: 10px">${dto.rec}</span>
+                        </a>
                     </div>
                     <div class="column is-5"></div>
                 </div>

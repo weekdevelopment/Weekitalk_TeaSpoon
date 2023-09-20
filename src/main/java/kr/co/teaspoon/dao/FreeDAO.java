@@ -16,4 +16,6 @@ public interface FreeDAO {
     public void freeEdit(Free dto) throws Exception;
 
     public List<Free> freeRecList() throws Exception;
+
+    public void updateRec(int bno) throws Exception;
 }
