@@ -257,9 +257,11 @@ INSERT INTO notice_comment(nno, author, content) VALUES(1, 'kang', '댓글 기�
 INSERT INTO notice_comment(nno, author, content) VALUES(1, 'so', '댓글 기능 더미데이터3');
 ​
 -- notice comment 리스트
-create view qnalist1 AS (SELECT a.cno AS cno, a.content AS content, a.author AS author, a.resdate AS resdate,
+create view noticelist AS (SELECT a.cno AS cno, a.nno as nno, a.content AS content, a.author AS author, a.resdate AS resdate,
        b.name AS name FROM notice_comment a, member b WHERE a.author=b.id ORDER BY a.cno ASC);
        
 COMMIT;
 ​
 SELECT * FROM men_askcomment;
+
+ select * from noticelist where nno=1;

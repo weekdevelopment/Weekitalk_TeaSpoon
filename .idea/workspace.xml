@@ -10,8 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7107b734-ae09-4c2f-8e6a-9047451717f4" name="Changes" comment="Build: Add Qna Paging">
+    <list default="true" id="7107b734-ae09-4c2f-8e6a-9047451717f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-09-19__1_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-09-19__1_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-09-20__5_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-09-20__5_36__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teaspon_soyoon.sql" beforeDir="false" afterPath="$PROJECT_DIR$/teaspon_soyoon.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dhxogns" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,40 +58,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/doyouni/spring01/springframework/pro31",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15820312",
-    "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "86b2d50d12e30820b37c7ea1ab56da05",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/db400tea/Downloads/Weekitalk/Weekitalk/src/main/webapp/resources/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;86b2d50d12e30820b37c7ea1ab56da05&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\webapp\resources\img" />
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\java\kr\co\teaspoon\util" />
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\webapp\WEB-INF\views\notice\css" />
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\resources\mappers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\webapp\resources\css" />
-      <recent name="D:\doyouni\mymy\Weekitalk_TeaSpoon\src\main\webapp\WEB-INF\views\qna\image" />
+      <recent name="C:\Users\db400tea\Downloads\Weekitalk\Weekitalk\src\main\webapp\resources\img" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.78" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.78" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Weekitalk:war">
@@ -103,7 +93,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="5e6093d2-4a17-4155-b4f9-05632381ab64" />
+        <option name="BASE_DIRECTORY_NAME" value="95984ee8-092e-443b-99fa-e63a7074c633" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -111,7 +101,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56710" />
+        <option name="DEBUG_PORT" value="60857" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -193,19 +183,10 @@
       <workItem from="1694654985075" duration="7670000" />
       <workItem from="1694668906765" duration="3772000" />
       <workItem from="1694736634810" duration="9144000" />
-      <workItem from="1695026626128" duration="3525000" />
-      <workItem from="1695081571791" duration="10755000" />
-      <workItem from="1695095438064" duration="30000" />
-      <workItem from="1695110904835" duration="7596000" />
-      <workItem from="1695168401253" duration="2698000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Build: Add Qna Paging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build: Add Qna Paging" />
   </component>
 </project>
