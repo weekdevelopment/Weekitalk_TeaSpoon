@@ -1,6 +1,7 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.util.Page;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,8 +15,8 @@ public class QnaDAOImpl implements QnaDAO {
     private SqlSession sqlSession;
 
     @Override
-    public List<Qna> qnaList() throws Exception {
-        return sqlSession.selectList("qna.qnaList");
+    public List<Qna> qnaList(Page page) throws Exception {
+        return sqlSession.selectList("qna.qnaList",page);
     }
 
     @Override
@@ -32,12 +33,27 @@ public class QnaDAOImpl implements QnaDAO {
     }
 
     @Override
-    public void qnaDelete(int qno) throws Exception {
-        sqlSession.delete("qna.qnaDelete",qno);
+    public void qnaDelete(Qna dto) throws Exception {
+        sqlSession.delete("qna.qnaDelete",dto);
     }
 
     @Override
     public void qnaEdit(Qna dto) throws Exception {
         sqlSession.update("qna.qnaEdit", dto);
+    }
+    @Override
+    public int totalCount(Page page) throws Exception {
+        return sqlSession.selectOne("qna.totalCount", page);
+    }
+
+    @Override
+    public List<Qna> selectBest() throws Exception {
+        return sqlSession.selectList("qna.selectBest");
+    }
+
+    @Override
+    public List<Qna> selectVisit() throws Exception {
+        return sqlSession.selectList("qna.selectVisit");
+
     }
 }

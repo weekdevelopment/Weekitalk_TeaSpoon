@@ -2,6 +2,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Qna;
 import kr.co.teaspoon.service.QnaService;
+import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +20,32 @@ public class QnaController {
     private QnaService qnaService;
 
     @GetMapping("list.do") //notice/list.do
-    public String getQnaList(Model model) throws Exception {
-        List<Qna> qnaList = qnaService.qnaList();
+    public String getQnaList(HttpServletRequest request, Model model) throws Exception {
+        String type = request.getParameter("type");
+        String keyword = request.getParameter("keyword");
+        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+
+        Page page = new Page();
+        page.setSearchType(type);
+        page.setSearchKeyword(keyword);
+        int total = qnaService.totalCount(page);
+
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
+
+        model.addAttribute("type", type);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("page", page);
+        model.addAttribute("curPage", curPage);
+
+        List<Qna> qnaList = qnaService.qnaList(page);
         model.addAttribute("qnaList", qnaList);
+        List<Qna> selectBest = qnaService.selectBest();
+        model.addAttribute("selectBest",selectBest);
+        List<Qna> selectVisit = qnaService.selectVisit();
+        model.addAttribute("selectVisit",selectVisit);
+
         return "/qna/qnaList";
     }
 
@@ -60,7 +84,11 @@ public class QnaController {
     @GetMapping("delete.do")
     public String qnaDelete(HttpServletRequest request, Model model) throws Exception {
         int qno = Integer.parseInt(request.getParameter("qno"));
-        qnaService.qnaDelete(qno);
+        int lev = Integer.parseInt(request.getParameter("lev"));
+        Qna dto = new Qna();
+        dto.setQno(qno);
+        dto.setLev(lev);
+        qnaService.qnaDelete(dto);
         return "redirect:list.do";
     }
 

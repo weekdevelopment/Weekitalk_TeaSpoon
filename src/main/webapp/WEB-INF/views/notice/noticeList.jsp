@@ -232,7 +232,6 @@
 					</article>
 				</c:forEach>
 			</div>
-			<%-- <c:if test='${sid eq "admin"}'>  --%>
 			<nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
 				<c:if test="${curPage > page.pageCount }">
 					<a href="${path1 }/notice/list.do?page=${page.blockStartNum - 1 }<c:if test="${!empty keyword }">&type=${type }&keyword=${keyword }</c:if>" class="pagination-previous">Previous</a>
@@ -258,6 +257,7 @@
 					</c:forEach>
 				</ul>
 			</nav>
+			<%-- <c:if test='${sid eq "admin"}'>  --%>
 			<div class="button-group">
 				<%--<a class="button is-info is-normal" href="${path1 }/free/insert.do">글쓰기</a>--%>
 				<a class="button post-btn" href="${path1 }/notice/insert.do">글쓰기</a>

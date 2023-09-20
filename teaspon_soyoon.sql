@@ -232,3 +232,30 @@ FROM (
 WHERE has_lev_0 = 1
 GROUP BY title, par
 ORDER BY count DESC LIMIT 5;
+
+-- Notice 댓글 테이블 생성
+​
+create table notice_comment(
+   cno INT PRIMARY KEY AUTO_INCREMENT,
+   nno INT,
+   author VARCHAR(16),
+   resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   content VARCHAR(200),
+   FOREIGN KEY(nno) REFERENCES notice(nno) ON DELETE CASCADE
+);
+​
+-- 더미 데이터 추가
+INSERT INTO notice_comment(nno, author, content) VALUES(1, 'park', '댓글 기능 더미데이터1');
+INSERT INTO notice_comment(nno, author, content) VALUES(2, 'park', '댓글 기능 더미데이터2');
+INSERT INTO notice_comment(nno, author, content) VALUES(3, 'kang', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(4, 'so', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(5, 'doyouni', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(6, 'kang', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(7, 'doyouni', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(8, 'admin', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(1, 'kang', '댓글 기능 더미데이터3');
+INSERT INTO notice_comment(nno, author, content) VALUES(1, 'so', '댓글 기능 더미데이터3');
+​
+COMMIT;
+​
+SELECT * FROM men_askcomment;
