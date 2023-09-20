@@ -4,17 +4,23 @@
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
 <%@ page import="java.util.*, java.lang.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<c:set var="path1" value="/Weekitalk_war" />
+<c:set var="path0" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <jsp:include page="./include/head.jsp"/>
+    <style>
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
 <section class="hero main_hero is-fullheight">
     <jsp:include page="./include/hd.jsp" />
 
-    <div class="hero-body">
+    <div class="hero-body" onclick="goMain()">
         <div class="container has-text-centered">
             <div class="slider-content animated zoomIn pb-6">
                 <div>
@@ -48,30 +54,11 @@
           </span>
         </div>
     </div>
+    <script>
+        function goMain() {
+            location.href = "${path0}/main";
+        }
+    </script>
 </section>
-<%--
-<!-- Rooms Section -->
-<jsp:include page="./content/room.jsp" />
-<!-- ./Rooms Section -->
-
-<!-- Features Modal -->
-<jsp:include page="./content/Features_Modal.jsp" />
-<!-- ./Features Modal -->
-
-<!-- About Section -->
-<jsp:include page="./content/about.jsp" />
-<!-- ./About Section -->
-
-<!-- Gallery Section -->
-<jsp:include page="./content/gallery.jsp" />
-<!-- ./Gallery Section -->
-
-<!-- Contact Us Section -->
-<jsp:include page="./content/contact.jsp" />
-<!-- ./Contact Us Section -->
-
-<!-- Footer Section -->
-<jsp:include page="./include/ft.jsp" />
-<!-- end to Footer Section --> --%>
 </body>
 </html>

@@ -52,6 +52,15 @@
                     <table id="table1">
                         <tbody>
                         <tr>
+                            <th style="background-color:#dcdcdc">내용</th>
+                            <td>
+                                <textarea name="content" id="content" class="textarea" placeholder="내용 입력" rows="8" cols="100" maxlength="1400" required></textarea>
+                                <script>
+                                    CKEDITOR.replace('content',	{filebrowserUploadUrl:'${path1}/edumag/imageUpload.do'});
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
                             <th style="background-color:#dcdcdc">제목</th>
                             <td>
                                 <input type="text" name="title" id="title" class="input" placeholder="제목 입력" maxlength="98" required>

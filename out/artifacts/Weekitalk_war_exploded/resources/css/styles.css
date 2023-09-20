@@ -11,7 +11,7 @@ body {
 }
 
 .main_hero {
-  background-image: url('../../resources/img/1.jpg');
+  background-image: url('../../resources/img/main.png');
   background-size: cover;
 }
 a {
@@ -132,7 +132,6 @@ iframe {
 }
 footer {
   background-color: #344157;
-  border-top: 3px solid #03b2e3;
   color: #fff !important;
 }
 .footer_title {

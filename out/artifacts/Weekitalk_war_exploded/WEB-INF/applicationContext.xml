@@ -48,6 +48,11 @@
         <bean id="boardDAO" class="kr.co.teaspoon.dao.BoardDAOImpl"/>
         <bean id="memberService" class="kr.co.teaspoon.service.MemberServiceImpl"/>
         <bean id="memberDAO" class="kr.co.teaspoon.dao.MemberDAOImpl"/>
+        <bean id="edumagService" class="kr.co.teaspoon.service.EdumagServiceImpl" />
+        <bean id="edumagDAO" class="kr.co.teaspoon.dao.EdumagDAOImpl" />
+        <bean id="edumagCommentService" class="kr.co.teaspoon.service.EdumagCommentServiceImpl" />
+        <bean id="edumagCommentDAO" class="kr.co.teaspoon.dao.EdumagCommentDAOImpl" />
+
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

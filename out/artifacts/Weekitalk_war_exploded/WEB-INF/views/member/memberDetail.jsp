@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
-<c:set var="path1" value="/Weebinder_war" />
+<c:set var="path0" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
     <jsp:include page="../include/hd.jsp"></jsp:include>
     <figure class="visual" id="vs1">
         <ul class="imgbox">
-            <li class="hero is-medium is-link">
+            <li class="hero is-medium is-link" style="background-color: #004225;">
                 <div class="hero-body">
                     <p class="title">
                         Medium hero

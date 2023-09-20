@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
 <%@ page import="java.util.*, java.lang.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<c:set var="path1" value="/Weebinder_war" />
+<c:set var="path0" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +21,7 @@
     <jsp:include page="../include/hd.jsp"></jsp:include>
     <figure class="visual" id="vs1">
         <ul class="imgbox">
-            <li class="hero is-medium is-link">
+            <li class="hero is-medium is-link" style="background-color: #004225;">
                 <div class="hero-body">
                     <p class="title">
                         Medium hero
@@ -72,8 +72,8 @@
 
         </div>
     </div>
-    <!-- 푸터 부분 인클루드 -->
-    <jsp:include page="../include/ft.jsp"></jsp:include>
 </div>
+<!-- 푸터 부분 인클루드 -->
+<jsp:include page="../include/ft.jsp"></jsp:include>
 </body>
 </html>
