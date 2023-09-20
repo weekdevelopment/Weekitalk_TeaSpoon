@@ -148,7 +148,8 @@
 <%--                                    <strong>MyPage</strong>--%>
 <%--                                </a>--%>
 <%--                                <a href="${path1}/member/logout.do" class="button is-light">--%>
-<%--                                    LogOut--%>
+<%--                                    LogOut--%
+>
 <%--                                </a>--%>
 <%--                            </c:if>--%>
 <%--                            <c:if test="${empty sid}">--%>
