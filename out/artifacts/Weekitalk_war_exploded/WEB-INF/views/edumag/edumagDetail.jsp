@@ -88,7 +88,7 @@
                     <tbody>
                     <tr>
                         <th style="background-color:#dcdcdc"></th>
-                        <td><img src="${pageContext.request.contextPath}/resources/img/${dto.img}"></td>
+                        <td><img src="${dto.imagesLink}"></td>
                     </tr>
                     <tr>
                         <th style="background-color:#dcdcdc">관련 영상</th>

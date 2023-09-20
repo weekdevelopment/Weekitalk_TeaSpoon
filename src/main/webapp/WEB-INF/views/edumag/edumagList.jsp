@@ -86,7 +86,8 @@
                                      onclick="location.href='${path1 }/edumag/detail.do?no=${edumag.no}';">
                                     <div class="card-image">
                                         <figure class="image is-16by9">
-                                            <img src="${path1 }/resources/img/${edumag.img}">
+<%--                                            <img src="${path1 }/resources/img/${edumag.img}">--%>
+                                            <img src="${edumag.imagesLink}">
                                         </figure>
 
                                     </div>

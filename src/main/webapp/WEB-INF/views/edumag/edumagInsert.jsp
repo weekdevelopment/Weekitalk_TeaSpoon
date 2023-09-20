@@ -52,15 +52,6 @@
                     <table id="table1">
                         <tbody>
                         <tr>
-                            <th style="background-color:#dcdcdc">내용</th>
-                            <td>
-                                <textarea name="content" id="content" class="textarea" placeholder="내용 입력" rows="8" cols="100" maxlength="1400" required></textarea>
-                                <script>
-                                    CKEDITOR.replace('content',	{filebrowserUploadUrl:'${path1}/edumag/imageUpload.do'});
-                                </script>
-                            </td>
-                        </tr>
-                        <tr>
                             <th style="background-color:#dcdcdc">제목</th>
                             <td>
                                 <input type="text" name="title" id="title" class="input" placeholder="제목 입력" maxlength="98" required>
@@ -76,9 +67,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <th style="background-color:#dcdcdc">유튜브 링크</th>
+                            <th style="background-color:#dcdcdc">유튜브<br> 링크</th>
                             <td>
                                 <input type="text" name="link" id="link" class="textarea" placeholder="유튜브 영상 링크 입력"
+                                       style="width: 1200px; height: 50px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcdcdc">썸네일 <br>이미지</th>
+                            <td>
+                                <input type="text" name="imagesLink" id="imagesLink" class="textarea" placeholder="썸네일 이미지 주소 등록"
                                        style="width: 1200px; height: 50px;">
                             </td>
                         </tr>

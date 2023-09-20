@@ -59,7 +59,7 @@
               </td>
             </tr>
             <tr>
-              <th style="background-color:#dcdcdc">내용<br>이미지</th>
+              <th style="background-color:#dcdcdc">내용</th>
               <td>
                 <textarea name="content" class="textarea" id="content" placeholder="이미지와 내용 입력" rows="8" cols="100" maxlength="800"
                           required>
@@ -70,9 +70,16 @@
                 </script>
               </td>
             </tr>
-              <th style="background-color:#dcdcdc">유튜브 링크</th>
+              <th style="background-color:#dcdcdc">유튜브<br> 링크</th>
               <td>
                 <input type="text" name="link" id="link" value="${dto.link }"
+                       style="width: 1200px; height: 50px;">
+              </td>
+            </tr>
+            <tr>
+              <th style="background-color:#dcdcdc">썸네일<br>이미지</th>
+              <td>
+                <input type="text" name="imagesLink" id="imagesLink" class="textarea" placeholder="썸네일 이미지 주소 등록" value="${dto.imagesLink }"
                        style="width: 1200px; height: 50px;">
               </td>
             </tr>

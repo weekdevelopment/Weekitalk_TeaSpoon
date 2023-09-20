@@ -81,7 +81,7 @@ public class EdumagController {
         dto.setLink(request.getParameter("link"));
         dto.setTitle(request.getParameter("title"));
         dto.setContent(request.getParameter("content"));
-        dto.setImg(request.getParameter("img"));
+        dto.setImagesLink(request.getParameter("imagesLink"));
         edumagService.edumagInsert(dto);
         return "redirect:list.do";
     }
