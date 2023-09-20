@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Weekitalk:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/Weekitalk_war</output-path>
+    <root id="archive" name="Weekitalk_war.war">
+      <element id="artifact" artifact-name="Weekitalk:war exploded" />
+    </root>
+  </artifact>
+</component>
