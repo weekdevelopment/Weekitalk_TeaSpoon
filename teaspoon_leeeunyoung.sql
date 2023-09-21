@@ -177,36 +177,36 @@ COMMIT;
 SELECT * FROM edumag;
 -- ---------------------------------------------------------------
 
-DROP TABLE edumagcomment;
+SELECT * FROM edumagcomment
 
-CREATE TABLE edumagComment(
-NO INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-bno INT NOT NULL,
-id VARCHAR(20) NOT NULL,
-content VARCHAR(500),
-resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE edumagcomment(
+dno INT PRIMARY KEY AUTO_INCREMENT,   -- (댓글번호) 자동발생
+author VARCHAR(16) NOT NULL,   -- (댓글 작성자)
+content VARCHAR(1000) NOT NULL,   -- (댓글 내용)
+regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- (댓글 등록일)
+par INT(11) NOT NULL   -- (해당 게시글 번호)
 );
 
-INSERT INTO edumagComment VALUES(
+INSERT INTO edumagcomment VALUES(
 DEFAULT,
-'1',
 'seo',
-'좋은 정보 감사합니다 !',
-DEFAULT
+'좋은 정보 감사합니다!',
+DEFAULT,
+'1'
 );
 
-INSERT INTO edumagComment VALUES(
+INSERT INTO edumagcomment VALUES(
 DEFAULT,
-'1',
 'lee',
-'우왕 놀라워요...',
-DEFAULT
+'우왕~ 참고할게욧!',
+DEFAULT,
+'1'
 );
 
-INSERT INTO edumagComment VALUES(
+INSERT INTO edumagcomment VALUES(
 DEFAULT,
-'1',
 'han',
-'이런 방법이 있었구나~',
-DEFAULT
+'허허,,, 그렇군요,,,',
+DEFAULT,
+'1'
 );
