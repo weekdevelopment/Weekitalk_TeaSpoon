@@ -1,8 +1,11 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Free;
+import kr.co.teaspoon.dto.Reco;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface FreeDAO {
     public List<Free> freeList() throws Exception;
@@ -15,7 +18,20 @@ public interface FreeDAO {
 
     public void freeEdit(Free dto) throws Exception;
 
-    public List<Free> freeRecList() throws Exception;
+    public List<Free> freeBestRecList() throws Exception;
 
-    public void updateRec(int bno) throws Exception;
+    
+    public Reco findReco(int bno, String id) throws Exception;
+
+    public Reco memberFindReco(Reco reco) throws Exception;
+
+    public int insertReco(Reco reco) throws Exception;
+
+    public void deleteReco(Reco reco) throws Exception;
+
+    public void increaseRec(Reco reco) throws Exception;
+
+    public void decreaseRec(Reco reco) throws Exception;
+
+
 }

@@ -49,7 +49,7 @@
 							<header class="card-header">
 								<p class="card-header-title">추천 많은 글</p>
 							</header>
-                            <c:forEach items="${freeRecList }" var="free" varStatus="status">
+                            <c:forEach items="${freeBestRecList }" var="free" varStatus="status">
                                 <div class="card-table">
                                     <div class="content">
                                         <table class="table is-fullwidth">

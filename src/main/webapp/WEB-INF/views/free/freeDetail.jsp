@@ -46,9 +46,9 @@
                 <div class="card-content">
                     <div class="media">
                         <div class="media-content has-text-centered">
-                            <h1 class="title article-title">${dto.title }</h1>
+                            <h1 class="title article-title">${freeDTO.title }</h1>
                             <h6 class="subtitle is-6 article-subtitle">
-                                ${dto.id } | ${dto.regdate } | 조회수:${dto.visited }
+                                ${freeDTO.id } | ${freeDTO.regdate } | 조회수:${freeDTO.visited }
                             </h6>
                         </div>
                     </div>
@@ -56,31 +56,56 @@
 
                     <div class="content article-body">
                         <p>
-                            ${dto.content }
+                            ${freeDTO.content }
                         </p>
                     </div>
                 </div>
 
-                <div class="columns">
-                    <div class="column is-5"></div>
+                <%--<div class="columns">
+                    &lt;%&ndash;<div class="column is-5"></div>
                     <div class="column is-2">
-                        <a class="button is-fullwidth post-btn" href="${path1 }/free/edit.do?bno=${dto.bno}">
-                            추천<span style="margin-left: 10px">${dto.rec}</span>
-                        </a>
-                    </div>
-                    <div class="column is-5"></div>
-                </div>
+                        <img src="${path1}/resources/img/before_rec.png" id="recimg" width="70px" height="70px">
+                        &lt;%&ndash;<a class="button is-fullwidth post-btn" href="${path1 }/free/edit.do?bno=${freeDTO.bno}">
+                            추천<span style="margin-left: 10px">${freeDTO.rec}</span>
+                        </a>&ndash;%&gt;
+                            &lt;%&ndash;<c:if test="${empty sid}">
+                                <img src="${path1}/resources/img/before_rec.png" id="recimg" width="60px" height="60px"
+                                     class="rounded-circle mt-2">
+                                ${freeDTO.rec} <br><br>
+                                추천 기능은 <a href="/member/login" type="button" id="newLogin"
+                                          class="btn btn-outline-success">로그인</a> 후 사용 가능합니다.
 
-                <div class="columns">
+                            </c:if>
+                            <c:if test="${!empty sid}">
+                                <div>
+                                    <input type="hidden" id="rec_check" value="${recoDTO.flag}">
+                                    <img src="${path1}/resources/img/before_rec.png" id="recimg" width="60px" height="60px"> ${freeDTO.rec}
+                                </div>
+                            </c:if>&ndash;%&gt;
+                    </div>
+                    <div class="column is-5"></div>&ndash;%&gt;
+                    <img src="${path1}/resources/img/before_rec.png" id="recimg" width="70px" height="70px">
+                </div>--%>
+
+                <div class="img-container">
+                    <input type="hidden" id="rec_check" value="${recoDTO.flag }">
+                    <h1>${recoDTO.flag } </h1>
+                    <img src="${path1}/resources/img/before_rec.png" id="recimg" width="70px" height="70px">
+                </div>
+                <p class="has-text-centered has-text-info has-text-weight-bold is-size-5 is-large" id='thumbCnt'>
+                    ${freeDTO.rec }
+                </p>
+
+                <div class="columns mt-5">
                     <div class="column is-3"></div>
                     <div class="column is-2">
                         <a class="button is-fullwidth is-info" href="${path1 }/free/list.do">글 목록</a>
                     </div>
                     <div class="column is-2">
-                        <a class="button is-fullwidth is-primary" href="${path1 }/free/edit.do?bno=${dto.bno}">글 수정</a>
+                        <a class="button is-fullwidth is-primary" href="${path1 }/free/edit.do?bno=${freeDTO.bno}">글 수정</a>
                     </div>
                     <div class="column is-2">
-                        <a class="button is-fullwidth is-danger" href="${path1 }/free/delete.do?bno=${dto.bno}">글 삭제</a>
+                        <a class="button is-fullwidth is-danger" href="${path1 }/free/delete.do?bno=${freeDTO.bno}">글 삭제</a>
                     </div>
                     <div class="column is-3"></div>
                 </div>
@@ -97,12 +122,61 @@
                 </form>
             </div>
 
-
-
         </div>
     </div>
 </div>
 <!-- 푸터 부분 인클루드 -->
 <jsp:include page="../include/ft.jsp"></jsp:include>
+
+<script>
+    $(document).ready(function () {
+        const bno = '${freeDTO.bno }';
+        const id = "${sid }";
+        let recoCnt = Number("${freeDTO.rec }"); // 임시
+
+        console.log('bno:'+bno);
+        console.log('id:'+id);
+        const recImage = document.getElementById("recimg")
+
+
+
+        console.log('recImage:'+recImage.src);
+        let recval = document.getElementById('rec_check').value;
+        if (recval > 0) {
+            recimg.src = "${path1}/resources/img/after_rec.png";
+        } else {
+            recimg.src = "${path1}/resources/img/before_rec.png";
+        }
+        // 좋아요 버튼을 클릭 시 실행되는 코드
+        $("#recimg").on("click", function () {
+            console.log('id:'+id);
+
+            if (!id) {
+                alert("추천은 로그인 후에 가능합니다."); // 로그인되어 있지 않으면 경고창 표시
+                return; // 함수 종료
+            }
+
+            $.ajax({
+                url: '${path1}/free/rec',
+                type: 'POST',
+                data: { 'bno': bno, 'id': id, 'recoCnt': recoCnt},
+                success: function (data) {
+                    if (data == 1) {
+                        $("#recimg").attr("src", "${path1}/resources/img/after_rec.png");
+                        $("#thumbCnt").html(recoCnt + 1);
+                        //location.reload();
+                    } else {
+                        //$("#recimg").attr("src", "${path1}/resources/img/before_rec.png");
+                        alert("이미 추천한 게시물입니다.");
+                        //location.reload();
+                    }
+                }, error: function () {
+                    $("#recimg").attr("src", "${path1}/resources/img/after_rec.png");
+                    console.log('오타 찾으세요')
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

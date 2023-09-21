@@ -1,6 +1,9 @@
 package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Free;
+import kr.co.teaspoon.dto.Member;
+import kr.co.teaspoon.dto.Reco;
+import kr.co.teaspoon.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,22 +30,33 @@ public class FreeController {
     private FreeService freeService;
 
     @Autowired
+    private MemberService memberService;
+
+    @Autowired
     HttpSession session;
 
     @GetMapping("list.do")        //free/list.do
     public String getfreeList(Model model) throws Exception {
         List<Free> freeList = freeService.freeList();
         model.addAttribute("freeList", freeList);
-        List<Free> freeRecList = freeService.freeRecList();
-        model.addAttribute("freeRecList", freeRecList);
+        List<Free> freeBestRecList = freeService.freeBestRecList();
+        model.addAttribute("freeBestRecList", freeBestRecList);
         return "/free/freeList";
     }
 
     @GetMapping("detail.do")    //free/detail.do?bno=1
     public String getfreeDetail(HttpServletRequest request, Model model) throws Exception {
         int bno = Integer.parseInt(request.getParameter("bno"));
-        Free dto = freeService.freeDetail(bno);
-        model.addAttribute("dto", dto);
+        String id = (String) session.getAttribute("sid");
+
+        Free freeDTO = freeService.freeDetail(bno);
+        Reco recoDTO = freeService.findReco(bno, id);
+        Member memberDTO = memberService.getMember(id);
+
+        model.addAttribute("freeDTO", freeDTO);
+        model.addAttribute("recoDTO", recoDTO);
+        model.addAttribute("memberDTO", memberDTO);
+
         return "/free/freeDetail";
     }
 
@@ -198,5 +212,21 @@ public class FreeController {
                 out.close();
             }
         }
+    }
+
+//    @RequestMapping(value="rec", method=RequestMethod.POST)
+//    public @ResponseBody int rec(@ModelAttribute Reco reco) throws Exception {
+//        //int result = bs.insertLike(like);
+//        int result = freeService.insertReco(reco);
+//        return result;
+//    }
+    @PostMapping("rec")
+    @ResponseBody
+    public int rec(@ModelAttribute Reco reco) throws Exception {
+        int result = freeService.insertReco(reco);
+        System.out.println("result : " + result);
+        //reco.
+
+        return result;
     }
 }
