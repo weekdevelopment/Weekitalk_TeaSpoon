@@ -13,17 +13,9 @@
     <list default="true" id="7107b734-ae09-4c2f-8e6a-9047451717f4" name="Changes" comment="Build: &quot;Build: Edumag 검색창, 페이징 처리&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war/Weekitalk_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war/Weekitalk_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/kr/co/teaspoon/controller/EdumagController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/kr/co/teaspoon/controller/EdumagController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/kr/co/teaspoon/dto/Edumag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/kr/co/teaspoon/dto/Edumag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/mappers/edumagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/classes/mappers/edumagMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagEdit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagInsert.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Weekitalk_war_exploded/WEB-INF/views/edumag/edumagList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EdumagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EdumagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Edumag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Edumag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/edumagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/edumagMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagEdit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagInsert.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edumag/edumagList.jsp" afterDir="false" />
@@ -213,7 +205,7 @@
       <workItem from="1695133962780" duration="8118000" />
       <workItem from="1695184310074" duration="274000" />
       <workItem from="1695184600278" duration="20000" />
-      <workItem from="1695184658916" duration="8500000" />
+      <workItem from="1695184658916" duration="11647000" />
     </task>
     <task id="LOCAL-00001" summary="Build: &quot;Build: Edumag 검색창, 페이징 처리&quot;">
       <option name="closed" value="true" />

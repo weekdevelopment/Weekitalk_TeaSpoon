@@ -38,13 +38,22 @@
     color: #ffffff;
   }
 
+  .column1 {
+    text-align: center;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem;
+  }
+
 </style>
 <body>
 <div class="container is-fullhd">
   <!-- 헤더 부분 인클루드 -->
   <jsp:include page="../include/hd.jsp"></jsp:include>
   <div class="content" id="contents">
-    <div class="row column text-center">
+    <div class="row column1 text-center">
       <h2 class="h1">수정</h2>
       <hr>
       <div class="container">
