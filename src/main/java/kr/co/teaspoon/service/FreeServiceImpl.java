@@ -62,10 +62,10 @@ public class FreeServiceImpl implements FreeService {
         if (find == null) {
             result = freeDAO.insertReco(reco);
             freeDAO.increaseRec(reco);
-        } else {
+        } /*else {
             freeDAO.deleteReco(reco);
             freeDAO.decreaseRec(reco);
-        }
+        }*/
         return result;
     }
 }
